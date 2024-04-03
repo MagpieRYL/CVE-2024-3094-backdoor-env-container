@@ -1,0 +1,17 @@
+[Unit]
+Description=Mount unit for firefox, revision 2987 via mount-control
+After=snapd.mounts-pre.target
+Before=snapd.mounts.target
+Before=local-fs.target
+
+[Mount]
+What=/usr/share/hunspell
+Where=/var/snap/firefox/common/host-hunspell
+Type=
+Options=ro,bind,noatime,noexec
+LazyUnmount=yes
+
+[Install]
+WantedBy=snapd.mounts.target
+WantedBy=multi-user.target
+X-SnapdOrigin=mount-control

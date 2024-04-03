@@ -1,0 +1,16 @@
+[Unit]
+Description=Mount unit for gnome-42-2204, revision 141
+After=snapd.mounts-pre.target
+Before=snapd.mounts.target
+Before=local-fs.target
+
+[Mount]
+What=/var/lib/snapd/snaps/gnome-42-2204_141.snap
+Where=/snap/gnome-42-2204/141
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=snapd.mounts.target
+WantedBy=multi-user.target

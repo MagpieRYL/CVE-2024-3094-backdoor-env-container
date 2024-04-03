@@ -1,0 +1,16 @@
+[Unit]
+Description=Mount unit for gnome-3-38-2004, revision 143
+After=snapd.mounts-pre.target
+Before=snapd.mounts.target
+Before=local-fs.target
+
+[Mount]
+What=/var/lib/snapd/snaps/gnome-3-38-2004_143.snap
+Where=/snap/gnome-3-38-2004/143
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=snapd.mounts.target
+WantedBy=multi-user.target
